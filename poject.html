@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>
+	Employee Salary Calculator
+	</title> 
+	</head>
+    <body>
+		<div style="background-color:lightblue">
+			<H1 align=center>Employee Salary Calculator</H1>
+		</div>
+		<div style="background-color:lightgreen">
+			<h3 align=center>Welcome to online Salary Calculator</h3>
+		</div>
+		<br>
+		<div style=" margin: 0 0px 0 312px; padding: 0 0 0 232px;">
+		<form name="FormFirst">
+			<label  style="width:240px; display:inline-block" for="EmployeeID">Employee ID: </label>
+			 <input type="text" name="EmployeeID" value="BC123456789"><br><br>
+			 
+			<label style="width:240px; display:inline-block" for="EmployeeName">Employee Name: </label>
+			 <input type="text" name="EmployeeName" value="Mukash Wasti"><br><br>
+			 
+			<label style="width:240px; display:inline-block" for="EmployeeFatherName">Employee Father Name</label>
+			 <input type="text" name="EmployeeFatherName" value="Zafar Wasti"><br><br>
+			 
+			<label style="width:240px; display:inline-block" style="width:240px; display:inline-block" for="Gender">Gender:</label><br>
+			<label style="width:240px; display:inline-block" for="male">Male</label>
+			<input type="radio" name="gender" id="male" value="male"><br>
+			<label style="width:240px; display:inline-block" for="female">Female</label>
+			<input type="radio" name="gender" id="female" value="female"><br><br>
+			
+			<label style="width:240px; display:inline-block" for="CNIC">CNIC: </label>
+			<input type="text" name="CNIC" pattern ="" value=""><br><br>
+			
+			<label style="width:240px; display:inline-block" for="BasicSalary">Basic Salary*: </label>
+			<input type="number" name="BasicSalary" ><br><br>
+			 
+			<label style="width:240px; display:inline-block" for="Utilities">Utilities*: </label>
+			<input type="text" name="Utilities" id="utilities"><br><br>
+			 
+			<label style="width:240px; display:inline-block" for="HouseRent">House Rent*: </label>
+			<input type="text" name="HouseRent" id="houserent"><br><br>
+				 
+			<label style="width:240px; display:inline-block" for="TaxPersentage">Tax Persontage*: </label>
+			<input type="text" name="TaxPersentage" id="taxpersentage"><br><br>
+				 
+			<label style="width:240px; display:inline-block" for="TotalSalary">Total Salary*: </label>
+			<input type="text" name="TotalSalary" id="totalsalary"><br><br>
+				 
+			<label style="width:240px; display:inline-block" for="TaxYear">Tax Year: </label>
+			<select>
+			  <option>2014</option>
+			  <option>2015</option>
+			  <option>2016</option>
+			  <option>2017</option>
+			  <option>2018</option>
+			</select><br>
+			<button stlye="text-align:right;" type="button" onclick="salcal()">Calculate</button>
+			<button type="reset">Reset</button> You can press reset button for another employee
+
+			
+		</form>
+		</div>
+		
+		<!--Script to calculate Salary-->
+		
+		<script>
+		function salcal(){
+			var check = document.forms["FormFirst"]["BasicSalary"].value;
+			if(check==""){
+				alert("Basic Salary is mising.");
+				return false;
+			}
+			else{
+				document.getElementById('utilities').value = (10*check)/100;
+				document.getElementById('houserent').value = (8*check)/100;
+				document.getElementById('taxpersentage').value = (2*check)/100;
+				document.getElementById('totalsalary').value = (check-(2*check)/100)+(10*check)/100+(8*check)/100;
+			}
+		}
+		</script>
+     </body>
+</html>
